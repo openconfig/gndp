@@ -11,8 +11,8 @@ Additionally this service can be expanded to support neighbor discovery for IPv6
 
 ## Background
 
-[LLDP Specification](https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol)
-[ICMPv6 Specification](https://en.wikipedia.org/wiki/ICMPv6)
+* [LLDP Specification](https://en.wikipedia.org/wiki/Neighbor_Discovery_Protocol)
+* [ICMPv6 Specification](https://en.wikipedia.org/wiki/ICMPv6)
 
 ### Current design with PacketIO
 
