@@ -43,44 +43,11 @@ When the device has a failover which does not maintain all controller state, the
 
 ## Non-goals
 
-This protocol is not meant to replace or supersede the need for packetIO only to provide direct access to the LLDP service running on a device.
-Detailed Design
-Option 1 Creation of gNDP Service - Preferred
+This protocol is not meant to replace or supersede the need for packetIO only to provide direct access to the LLDP or ND services running on a device.
 
-## Protocol buffer implementation
+## Implmentation
 
-```proto
-
-service LLDP {
-  // Set sets the list of TLV's to be advertised to LLDP neighbors.
-  Set(SetRequest) (returns SetResponse)
-  // Get gets the currently advertised TLV's to LLDP neighbors.
-  Get(GetRequest) (returns GetResponse)
-}
-
-// SetRequest contains the list of TLV's to be set to be advertised to LLDP neighbors.  Every call to set is a replace operation for the set of TLV's to be advertised to neighbors.
-message SetRequest {
-  repeated TLV tlvs = 1;
-}
-
-message TLV {
-  string OUI = 1;
-  string subtype = 2;
-  string value = 3;
-}
-
-message GetRequest {}
-
-message GetResponse {
-  string chassis_id = 1;
-  string system_name = 2;
-  string system_description = 3;
-  string system_capabilities = 4;
-  string management_address = 5;
-  repeated TLV tlvs = 7;
-}
-
-```
+* [Proto Definition](./proto/gndp.proto)
 
 ### gNMI proto changes
 
