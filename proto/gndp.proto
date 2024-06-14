@@ -38,8 +38,12 @@ message SetResponse{
 }
 
 message TLV {
+  // OUI is defined as the lower 24 bits.
   uint32 oui = 1;
+  // Subtype is defined the lower 8 bits.
   uint32 subtype = 2;
+  // Value is the byte representation of the value.
+  // It is limited to 507 bytes.
   bytes value = 3;
 }
 
