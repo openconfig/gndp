@@ -5,7 +5,10 @@
 Define services for interacting with on box services for neighbor interactions.
 
 * Define an RPC service for injecting metadata into the LLDP process running on box.  
-The current requirements for device neighbor discovery require the use of packet io for a very limited set of functions. LLDP and traceroute packets. These both could be off loaded into the box. For LLDP there still needs to be metadata delivered to neighbors to discover routing readiness.  This document describes the RPC service for this implementation. Other projects (e.g., dSDN/dTE) also use LLDP for discovery between nodes and would benefit from a generic means to program custom LLDP TLVs.
+
+The current requirements for device neighbor discovery require the use of PacketIO for a very limited set of functions. LLDP and traceroute packets. These both could be off loaded into the box.
+For LLDP there still needs to be metadata delivered to neighbors to discover routing readiness. This document describes the RPC service for this implementation.
+Other projects (e.g., dSDN/dTE) also use LLDP for discovery between nodes and would benefit from a generic means to program custom LLDP TLVs.
 
 Additionally this service can be expanded to support neighbor discovery for IPv6 as well for equivalent capability advertisment.
 
