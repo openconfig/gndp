@@ -38,9 +38,9 @@ message SetResponse{
 }
 
 message TLV {
-  string oui = 1;
-  string subtype = 2;
-  string value = 3;
+  uint32 oui = 1;
+  uint32 subtype = 2;
+  bytes value = 3;
 }
 
 message GetRequest{
@@ -50,7 +50,5 @@ message GetResponse {
   string chassis_id = 1;
   string system_name = 2;
   string system_description = 3;
-  string system_capabilities = 4;
-  string management_address = 5;
   repeated TLV tlvs = 7;
 }
